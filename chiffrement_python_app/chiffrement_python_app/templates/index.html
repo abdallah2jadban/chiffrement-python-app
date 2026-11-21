@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Chiffrement - Python Backend</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="min-h-screen bg-gradient">
+        <div class="container">
+            <!-- En-tête -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="icon">🐍</div>
+                    <h1>Chiffrement Cryptographique</h1>
+                </div>
+                <p class="subtitle">César & Vernam - Propulsé par Python</p>
+            </div>
+
+            <!-- Carte principale -->
+            <div class="card">
+                
+                <!-- Sélection de la méthode -->
+                <div class="section">
+                    <label class="label">MÉTHODE DE CHIFFREMENT</label>
+                    <div class="button-grid">
+                        <button id="btnCesar" class="btn-method active" onclick="selectMethod('cesar')">
+                            🔑 César
+                        </button>
+                        <button id="btnVernam" class="btn-method" onclick="selectMethod('vernam')">
+                            🔐 Vernam
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sélection de l'opération -->
+                <div class="section">
+                    <label class="label">OPÉRATION</label>
+                    <div class="button-grid">
+                        <button id="btnChiffrer" class="btn-operation btn-encrypt active" onclick="selectOperation('chiffrer')">
+                            🔒 Chiffrer
+                        </button>
+                        <button id="btnDechiffrer" class="btn-operation btn-decrypt" onclick="selectOperation('dechiffrer')">
+                            🔓 Déchiffrer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Champ texte -->
+                <div class="section">
+                    <label class="label">TEXTE (lettres A-Z uniquement)</label>
+                    <input type="text" id="inputTexte" class="input-field" placeholder="Entrez votre texte...">
+                </div>
+
+                <!-- Champ clé -->
+                <div class="section">
+                    <label class="label" id="labelCle">CLÉ (nombre entier)</label>
+                    <input type="text" id="inputCle" class="input-field" placeholder="Ex: 3">
+                </div>
+
+                <!-- Boutons d'action -->
+                <div class="action-buttons">
+                    <button class="btn-primary" onclick="traiter()">
+                        <span id="btnText">🔒 Chiffrer</span>
+                    </button>
+                    <button class="btn-reset" onclick="reinitialiser()">
+                        🔄
+                    </button>
+                </div>
+
+                <!-- Loader -->
+                <div id="loader" class="loader hidden">
+                    <div class="spinner"></div>
+                    <p>Traitement en cours...</p>
+                </div>
+
+                <!-- Zone d'erreur -->
+                <div id="zoneErreur" class="error-box hidden"></div>
+
+                <!-- Zone de résultat -->
+                <div id="zoneResultat" class="hidden">
+                    <div class="result-box">
+                        <label class="result-label">✅ RÉSULTAT</label>
+                        <div id="resultatTexte" class="result-text"></div>
+                    </div>
+
+                    <!-- Étapes détaillées -->
+                    <div id="zoneEtapes" class="steps-box hidden">
+                        <label class="result-label">📋 DÉTAILS DU TRAITEMENT (Python)</label>
+                        <div id="etapesGrid" class="steps-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Informations -->
+                <div class="info-box">
+                    <p id="infoText">
+                        <strong>ℹ️ Info :</strong> 
+                        Le chiffrement César décale chaque lettre de la clé numérique dans l'alphabet.
+                    </p>
+                    <p style="margin-top: 0.5rem; font-size: 0.75rem; opacity: 0.8;">
+                        🐍 Backend Python + Flask
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>🔐 Interface de chiffrement cryptographique - Python Backend</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

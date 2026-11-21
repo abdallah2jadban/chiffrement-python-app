@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+    padding: 1rem;
+}
+
+.container {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+/* En-tête */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.icon {
+    font-size: 2.5rem;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+.subtitle {
+    color: #e9d5ff;
+    font-size: 1rem;
+}
+
+/* Carte principale */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sections */
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    display: block;
+    color: #e9d5ff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+/* Grille de boutons */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+/* Boutons de méthode */
+.btn-method {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e9d5ff;
+}
+
+.btn-method:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-method.active {
+    background: #9333ea;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.4);
+    transform: scale(1.05);
+}
+
+/* Boutons d'opération */
+.btn-operation {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: #e9d5ff;
+}
+
+.btn-operation:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-encrypt.active {
+    background: #16a34a;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.4);
+    transform: scale(1.05);
+}
+
+.btn-decrypt.active {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+    transform: scale(1.05);
+}
+
+/* Champs de saisie */
+.input-field {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(216, 180, 254, 0.3);
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+    color: rgba(216, 180, 254, 0.5);
+}
+
+.input-field:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.3);
+}
+
+/* Boutons d'action */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+    flex: 1;
+    background: linear-gradient(135deg, #9333ea 0%, #ec4899 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(147, 51, 234, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 20px 25px -5px rgba(147, 51, 234, 0.5);
+    transform: scale(1.05);
+}
+
+.btn-reset {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e9d5ff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 60px;
+}
+
+.btn-reset:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Zone d'erreur */
+.error-box {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    border-radius: 0.75rem;
+    color: #fecaca;
+}
+
+/* Zone de résultat */
+.result-box {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+    border: 1px solid rgba(74, 222, 128, 0.5);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.result-label {
+    display: block;
+    color: #bbf7d0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.result-text {
+    font-size: 1.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: white;
+    word-break: break-all;
+}
+
+/* Étapes détaillées */
+.steps-box {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(216, 180, 254, 0.3);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+    max-height: 12rem;
+    overflow-y: auto;
+}
+
+.step-item {
+    font-size: 0.75rem;
+    font-family: 'Courier New', monospace;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: #e9d5ff;
+    text-align: center;
+}
+
+/* Info box */
+.info-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.info-box p {
+    color: #bfdbfe;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #d8b4fe;
+    font-size: 0.875rem;
+}
+
+/* Classe utilitaire */
+.hidden {
+    display: none !important;
+}
+
+/* Scrollbar personnalisée */
+.steps-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.steps-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.steps-grid::-webkit-scrollbar-thumb {
+    background: rgba(147, 51, 234, 0.5);
+    border-radius: 4px;
+}
+
+.steps-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(147, 51, 234, 0.7);
+}
+
+/* Loader */
+.loader {
+    text-align: center;
+    padding: 2rem;
+    color: #e9d5ff;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid #9333ea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    .button-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
